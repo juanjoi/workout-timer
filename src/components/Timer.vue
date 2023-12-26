@@ -3,6 +3,8 @@
     <h2>{{ timer.title }}</h2>
     <h1>{{ formatTime }}</h1>
     <button @click="start">Restart</button>
+    <button @click="pauseInterval">Pause</button>
+    <button @click="triggerInterval">Continue</button>
   </div>
 </template>
 
@@ -32,6 +34,10 @@ export default {
       console.trace('Starting interval')
       this.isTimerRunning = true
       this.seconds = this.timer.time
+      this.triggerInterval()
+    },
+    triggerInterval () {
+      this.pauseInterval()
       this.timerInterval = setInterval(() => {
         if (--this.seconds <= 0) {
           this.finish()
@@ -43,11 +49,14 @@ export default {
       this.stop()
       this.$emit('ring')
     },
+    pauseInterval () {
+      clearInterval(this.timerInterval)
+    },
     stop () {
       console.trace('Stopping interval')
       this.isTimerRunning = false
       this.seconds = 0
-      clearInterval(this.timerInterval)
+      this.pauseInterval()
     },
     pad (value) {
       // Add leading zero if needed
@@ -59,22 +68,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-h1,
-h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #35495E;
-}
 </style>
