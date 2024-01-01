@@ -54,25 +54,61 @@ export default {
       workout: {
         blocks: [
           {
-            repetitions: 4,
+            repetitions: 1,
             steps: [
               {
                 type: 'exercise',
-                time: 20,
-                title: 'Jump Squat (Sentadilla con salto)'
+                time: 30,
+                title: 'Salto + plancha'
               },
               {
                 type: 'rest',
-                time: 10
+                time: 15
               },
               {
                 type: 'exercise',
-                time: 20,
-                title: 'Jumping Jacks'
+                time: 30,
+                title: 'TRX-Bicepts'
               },
               {
                 type: 'rest',
-                time: 10
+                time: 15
+              },
+              {
+                type: 'exercise',
+                time: 30,
+                title: 'Abdominales cruzados'
+              },
+              {
+                type: 'rest',
+                time: 15
+              },
+              {
+                type: 'exercise',
+                time: 30,
+                title: 'TRX-Vampiro'
+              },
+              {
+                type: 'rest',
+                time: 15
+              },
+              {
+                type: 'exercise',
+                time: 30,
+                title: 'TRX-Abdominales'
+              },
+              {
+                type: 'rest',
+                time: 15
+              },
+              {
+                type: 'exercise',
+                time: 30,
+                title: 'TRX-Tricepts'
+              },
+              {
+                type: 'rest',
+                time: 15
               }
             ]
           }
